@@ -1,6 +1,5 @@
 /*
- * Typeractive Corne – Full ZMK Conversion
- * QMK/Vial → ZMK
+ * Typeractive Corne – Full ZMK Conversion (FIXED)
  */
 
 #include <behaviors.dtsi>
@@ -14,30 +13,38 @@
 
         td_lower: td_lower {
             compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mo 1>, <&tog 1>;
         };
 
         td_raise: td_raise {
             compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mo 2>, <&tog 2>;
         };
 
-        td_1: td_1 { compatible = "zmk,behavior-tap-dance"; bindings = <&kp N1>, <&kp F1>; };
-        td_2: td_2 { compatible = "zmk,behavior-tap-dance"; bindings = <&kp N2>, <&kp F2>; };
-        td_3: td_3 { compatible = "zmk,behavior-tap-dance"; bindings = <&kp N3>, <&kp F3>; };
-        td_4: td_4 { compatible = "zmk,behavior-tap-dance"; bindings = <&kp N4>, <&kp F4>; };
-        td_5: td_5 { compatible = "zmk,behavior-tap-dance"; bindings = <&kp N5>, <&kp F5>; };
-        td_6: td_6 { compatible = "zmk,behavior-tap-dance"; bindings = <&kp N6>, <&kp F6>; };
-        td_7: td_7 { compatible = "zmk,behavior-tap-dance"; bindings = <&kp N7>, <&kp F7>; };
-        td_8: td_8 { compatible = "zmk,behavior-tap-dance"; bindings = <&kp N8>, <&kp F8>; };
-        td_9: td_9 { compatible = "zmk,behavior-tap-dance"; bindings = <&kp N9>, <&kp F9>; };
+        td_1: td_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N1>, <&kp F1>;
+        };
+
+        td_2: td_2 { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; bindings = <&kp N2>, <&kp F2>; };
+        td_3: td_3 { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; bindings = <&kp N3>, <&kp F3>; };
+        td_4: td_4 { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; bindings = <&kp N4>, <&kp F4>; };
+        td_5: td_5 { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; bindings = <&kp N5>, <&kp F5>; };
+        td_6: td_6 { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; bindings = <&kp N6>, <&kp F6>; };
+        td_7: td_7 { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; bindings = <&kp N7>, <&kp F7>; };
+        td_8: td_8 { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; bindings = <&kp N8>, <&kp F8>; };
+        td_9: td_9 { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; bindings = <&kp N9>, <&kp F9>; };
 
         /* ---------------- MACROS ---------------- */
 
         macro_prev_ws: macro_prev_ws {
             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings =
                 <&macro_press &kp LCTRL &kp LGUI>,
                 <&macro_tap &kp LEFT>,
@@ -46,6 +53,7 @@
 
         macro_next_ws: macro_next_ws {
             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings =
                 <&macro_press &kp LCTRL &kp LGUI>,
                 <&macro_tap &kp RIGHT>,
@@ -54,6 +62,7 @@
 
         macro_close: macro_close {
             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings =
                 <&macro_press &kp LCTRL &kp LGUI>,
                 <&macro_tap &kp F4>,
