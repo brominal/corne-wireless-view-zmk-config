@@ -39,7 +39,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
     };
@@ -72,10 +72,10 @@
 
             display-name = "num_mod";
             bindings = <
-&none  &none         &none         &kp TAB           &kp ESCAPE      &kp DEL      &kp GRAVE      &f_num F7 NUMBER_7  &f_num F8 NUMBER_8  &f_num F9 NUMBER_9  &none                 &none
-&none  &kp CAPS      &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp ENTER    &none          &f_num F4 NUMBER_4  &f_num F5 N5        &f_num F6 NUMBER_6  &kp SINGLE_QUOTE      &none
-&none  &kp LEFT_GUI  &none         &none             &none           &none        &none          &f_num F1 NUMBER_1  &f_num F2 NUMBER_2  &f_num F3 NUMBER_3  &kp NON_US_BACKSLASH  &none
-                                   &none             &none           &none        &kp BACKSPACE  &none               &kp NUMBER_0
+&none  &none         &none         &kp TAB           &kp ESCAPE      &kp DEL      &kp GRAVE      &f_num F7 N7  &f_num F8 N8  &f_num F9 N9  &none                 &none
+&none  &kp CAPS      &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp ENTER    &none          &f_num F4 N4  &f_num F5 N5  &f_num F6 N6  &kp SINGLE_QUOTE      &none
+&none  &kp LEFT_GUI  &none         &none             &none           &none        &none          &f_num F1 N1  &f_num F2 N2  &f_num F3 N3  &kp NON_US_BACKSLASH  &none
+                                   &none             &none           &none        &kp BACKSPACE  &none         &kp N0
             >;
         };
 
