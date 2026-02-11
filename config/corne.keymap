@@ -42,13 +42,6 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
-
-        lyrs: lyrs {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LYRS";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 2>;
-        };
     };
 
     keymap {
@@ -66,7 +59,7 @@
 &none  &kp Q  &kp W  &kp E             &kp R         &kp T    &kp Y      &kp U    &kp I          &kp O    &kp P     &none
 &none  &kp A  &kp S  &kp D             &kp F         &kp G    &kp H      &kp J    &kp K          &kp L    &kp SEMI  &none
 &none  &kp Z  &kp X  &kp C             &kp V         &kp B    &kp N      &kp M    &kp COMMA      &kp DOT  &kp FSLH  &none
-                     &kp LEFT_CONTROL  &kp LEFT_GUI  &lyrs    &kp SPACE  &kp TAB  &kp RIGHT_ALT
+                     &kp LEFT_CONTROL  &kp LEFT_GUI  &mo 1    &kp SPACE  &kp TAB  &kp RIGHT_ALT
             >;
         };
 
@@ -81,8 +74,8 @@
             bindings = <
 &none  &none         &none         &kp TAB           &kp ESCAPE      &kp DEL      &kp GRAVE      &f_num F7 N7  &f_num F8 N8  &f_num F9 N9  &none                 &none
 &none  &kp CAPS      &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp ENTER    &none          &f_num F4 N4  &f_num F5 N5  &f_num F6 N6  &kp SINGLE_QUOTE      &none
-&none  &kp LEFT_GUI  &none         &none             &none           &none        &none          &f_num F1 N1  &f_num F2 N2  &f_num F3 N3  &kp NON_US_BACKSLASH  &none
-                                   &none             &none           &none        &kp BACKSPACE  &none         &kp N0
+&none  &kp LEFT_GUI  &none         &none             &kp LEFT_SHIFT  &none        &none          &f_num F1 N1  &f_num F2 N2  &f_num F3 N3  &kp NON_US_BACKSLASH  &none
+                                   &trans            &trans          &none        &kp BACKSPACE  &trans        &kp N0
             >;
         };
 
@@ -95,19 +88,19 @@
 
             display-name = "arrows";
             bindings = <
-&none  &none  &none             &none         &none         &none    &none     &none     &none         &none      &none  &none
-&none  &none  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &none    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &none  &none
-&none  &none  &none             &none         &none         &none    &none     &none     &none         &none      &none  &none
-                                &none         &none         &none    &none     &none     &none
+&none  &none  &none             &none         &none         &none    &none     &none     &none          &none      &none  &none
+&none  &none  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &none    &kp LEFT  &kp DOWN  &kp UP_ARROW   &kp RIGHT  &none  &none
+&none  &none  &none             &none         &none         &none    &none     &none     &none          &none      &none  &none
+                                &trans        &trans        &none    &none     &trans    &kp RIGHT_ALT
             >;
         };
 
         pairs {
             bindings = <
-&none  &none  &none         &none      &none                 &none               &none              &none                  &none      &none            &none  &none
-&none  &none  &kp C_VOL_DN  &kp MINUS  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp EQUAL  &kp C_VOLUME_UP  &none  &none
-&none  &none  &kp K_MUTE    &none      &kp LEFT_BRACE        &none               &none              &kp RIGHT_BRACE        &none      &none            &none  &none
-                            &none      &none                 &kp BACKSPACE       &kp SPACE          &none                  &none
+&none  &none  &none         &none      &kp C_BRIGHTNESS_DEC  &none               &none              &kp C_BRIGHTNESS_INC   &none          &none            &none  &none
+&none  &none  &kp C_VOL_DN  &kp MINUS  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp C_VOLUME_UP  &none  &none
+&none  &none  &kp K_MUTE    &none      &kp LEFT_BRACE        &none               &none              &kp RIGHT_BRACE        &none          &none            &none  &none
+                            &trans     &trans                &kp BACKSPACE       &kp SPACE          &trans                 &kp RIGHT_ALT
             >;
 
             label = "pairs";
