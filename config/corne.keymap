@@ -52,7 +52,7 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
-            display-name = "Base";
+            display-name = "qwerty";
             bindings = <
 &none  &kp Q  &kp W  &kp E  &kp R         &kp T    &kp Y      &kp U    &kp I      &kp O    &kp P     &none
 &none  &kp A  &kp S  &kp D  &kp F         &kp G    &kp H      &kp J    &kp K      &kp L    &kp SEMI  &none
@@ -68,7 +68,7 @@
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            display-name = "Lower";
+            display-name = "num_mod";
             bindings = <
 &none  &none         &none         &kp TAB           &kp ESCAPE      &kp DEL      &kp GRAVE      &mt F7 NUMBER_7  &mt F8 NUMBER_8  &mt F9 NUMBER_9  &none                 &none
 &none  &kp CAPS      &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp ENTER    &none          &mt F4 NUMBER_4  &mt F5 N5        &mt F6 NUMBER_6  &kp SINGLE_QUOTE      &none
@@ -84,7 +84,7 @@
             // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            display-name = "Raise";
+            display-name = "arrows";
             bindings = <
 &none  &none  &none             &none         &none         &none    &none     &split_screen_left  &none         &none      &none  &none
 &none  &none  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &none    &kp LEFT  &kp DOWN            &kp UP_ARROW  &kp RIGHT  &none  &none
@@ -100,6 +100,8 @@
 &none  &none  &kp K_MUTE    &none      &kp LEFT_BRACE        &none               &none              &kp RIGHT_BRACE        &none      &none            &none  &none
                             &none      &none                 &kp BACKSPACE       &kp SPACE          &none                  &none
             >;
+
+            label = "pairs";
         };
     };
 };
