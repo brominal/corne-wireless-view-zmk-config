@@ -20,6 +20,16 @@
             bindings = <&kp LEFT_SHIFT>;
             key-positions = <38 16>;
         };
+
+        left_enter {
+            bindings = <&kp RETURN>;
+            key-positions = <38 17>;
+        };
+
+        right_enter {
+            bindings = <&kp RETURN>;
+            key-positions = <39 18>;
+        };
     };
 
     behaviors {
