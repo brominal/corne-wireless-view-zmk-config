@@ -128,8 +128,8 @@
             >;
         };
 
-        num_mod {
-            display-name = "num_mod";
+        nums {
+            display-name = "nums";
             bindings = <
 &none  &none     &none             &kp TAB           &kp ESCAPE      &kp DEL      &kp GRAVE      &num_f F7 NUMBER_7  &num_f F8 NUMBER_8   &num_f F9 NUMBER_9  &none                 &none
 &none  &kp CAPS  &kp LEFT_CONTROL  &kp LEFT_ALT      &kp LEFT_SHIFT  &kp ENTER    &kp F11        &num_f F4 NUMBER_4  &num_f F5 NUMBER_5   &num_f F6 NUMBER_6  &kp SINGLE_QUOTE      &none
