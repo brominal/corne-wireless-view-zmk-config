@@ -68,6 +68,51 @@
             #binding-cells = <0>;
             bindings = <&copy>, <&paste>;
         };
+
+        num_f: num_f {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NUM_F";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        parenthesis_pair: parenthesis_pair {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PARENTHESIS_PAIR";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+        };
+
+        bracket_pair: bracket_pair {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACKET_PAIR";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+        };
+
+        plus_equal_pair: plus_equal_pair {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PLUS_EQUAL_PAIR";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&kp PLUS>;
+        };
+
+        dash_under_pair: dash_under_pair {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DASH_UNDER_PAIR";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp UNDERSCORE>;
+        };
+
+        curly_pair: curly_pair {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CURLY_PAIR";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+        };
     };
 
     keymap {
@@ -86,29 +131,29 @@
         num_mod {
             display-name = "num_mod";
             bindings = <
-&none  &none         &none         &kp TAB           &kp ESCAPE      &kp DEL      &kp GRAVE      &none   &none   &none  &none                 &none
-&none  &kp CAPS      &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp ENTER    &none          &none   &none   &none  &kp SINGLE_QUOTE      &none
-&none  &kp LEFT_GUI  &none         &none             &kp LEFT_SHIFT  &none        &none          &none   &none   &none  &kp NON_US_BACKSLASH  &none
-                                   &trans            &trans          &none        &kp BACKSPACE  &trans  &kp N0
+&none  &none     &none             &kp TAB           &kp ESCAPE      &kp DEL      &kp GRAVE      &num_f F7 NUMBER_7  &num_f F8 NUMBER_8   &num_f F9 NUMBER_9  &none                 &none
+&none  &kp CAPS  &kp LEFT_CONTROL  &kp LEFT_ALT      &kp LEFT_SHIFT  &kp ENTER    &kp F11        &num_f F4 NUMBER_4  &num_f F5 NUMBER_5   &num_f F6 NUMBER_6  &kp SINGLE_QUOTE      &none
+&none  &none     &none             &none             &none           &none        &kp F12        &num_f F1 NUMBER_1  &num_f F2 NUMBER_2   &num_f F3 NUMBER_3  &kp NON_US_BACKSLASH  &none
+                                   &kp LEFT_CONTROL  &kp LEFT_GUI    &none        &kp BACKSPACE  &kp TAB             &num_f F10 NUMBER_0
             >;
         };
 
         arrows {
             display-name = "arrows";
             bindings = <
-&none  &none  &none             &none         &none         &none             &kp GRAVE  &kp F     &none          &none      &none  &none
-&none  &none  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT    &kp LEFT   &kp DOWN  &kp UP_ARROW   &kp RIGHT  &none  &none
-&none  &none  &none             &none         &none         &none             &none      &none     &none          &none      &none  &none
-                                &trans        &trans        &none             &none      &trans    &kp RIGHT_ALT
+&none  &none  &none             &none             &none         &none             &kp GRAVE  &kp F     &none          &none      &none  &none
+&none  &none  &kp LEFT_CONTROL  &kp LEFT_ALT      &kp LEFT_GUI  &kp LEFT_SHIFT    &kp LEFT   &kp DOWN  &kp UP_ARROW   &kp RIGHT  &none  &none
+&none  &none  &none             &none             &none         &none             &none      &none     &none          &none      &none  &none
+                                &kp LEFT_CONTROL  &kp LEFT_GUI  &none             &kp SPACE  &kp TAB   &kp RIGHT_ALT
             >;
         };
 
         pairs {
             bindings = <
-&none  &none  &none         &none      &kp C_BRIGHTNESS_DEC  &none               &none              &kp C_BRIGHTNESS_INC   &none          &none            &none  &none
-&none  &none  &kp C_VOL_DN  &kp MINUS  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp C_VOLUME_UP  &none  &none
-&none  &none  &kp K_MUTE    &none      &kp LEFT_BRACE        &none               &none              &kp RIGHT_BRACE        &none          &none            &none  &none
-                            &trans     &trans                &kp BACKSPACE       &kp SPACE          &trans                 &kp RIGHT_ALT
+&none  &none  &none              &none             &none             &none            &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none  &none  &none
+&none  &none  &parenthesis_pair  &dash_under_pair  &plus_equal_pair  &bracket_pair    &kp K_MUTE  &kp C_VOL_DN          &kp C_VOLUME_UP       &none  &none  &none
+&none  &none  &none              &none             &curly_pair       &none            &none       &none                 &none                 &none  &none  &none
+                                 &kp LEFT_CONTROL  &kp LEFT_GUI      &kp BACKSPACE    &kp SPACE   &kp TAB               &kp RIGHT_ALT
             >;
 
             label = "pairs";
@@ -116,10 +161,10 @@
 
         mouse {
             bindings = <
-&none  &none  &none  &mkp MB4   &mkp MB5   &cut      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none  &none
-&none  &none  &none  &mkp LCLK  &mkp RCLK  &copy     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none  &none
-&none  &none  &none  &none      &none      &paste    &none           &none           &none         &none            &none  &none
-                     &trans     &trans     &trans    &trans          &trans          &trans
+&none  &none  &none  &mkp MB4          &mkp MB5      &cut             &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &none  &none
+&none  &none  &none  &mkp LCLK         &mkp RCLK     &copy            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &none  &none
+&none  &none  &none  &none             &copy_paste   &paste           &none           &none           &none          &none            &none  &none
+                     &kp LEFT_CONTROL  &kp LEFT_GUI  &kp BACKSPACE    &kp SPACE       &kp TAB         &kp RIGHT_ALT
             >;
 
             label = "mouse";
