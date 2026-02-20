@@ -42,22 +42,31 @@
         copy: copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp C>;
+            bindings = <&kp LG(C)>;
             label = "COPY";
         };
 
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp V>;
+            bindings = <&kp LG(V)>;
             label = "PASTE";
         };
 
         cut: cut {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp X>;
+            bindings = <&kp LG(X)>;
             label = "CUT";
+        };
+    };
+
+    behaviors {
+        copy_paste: copy_paste {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COPY_PASTE";
+            #binding-cells = <0>;
+            bindings = <&copy>, <&paste>;
         };
     };
 
