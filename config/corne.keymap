@@ -66,6 +66,20 @@
             bindings = <&kp LG(GRAVE)>;
             label = "WINDOW_SWITCH";
         };
+
+        full_screen: full_screen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL &kp LEFT_GUI>,
+                <&macro_tap>,
+                <&kp F>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL &kp LEFT_GUI>;
+
+            label = "FULL_SCREEN";
+        };
     };
 
     behaviors {
@@ -148,7 +162,7 @@
         arrows {
             display-name = "arrows";
             bindings = <
-&none  &none  &none             &none             &none         &none             &window_switch  &kp F          &kp H         &none      &none  &none
+&none  &none  &none             &none             &none         &none             &window_switch  &full_screen   &kp H         &none      &none  &none
 &none  &none  &kp LEFT_CONTROL  &kp LEFT_ALT      &kp LEFT_GUI  &kp LEFT_SHIFT    &kp LEFT        &kp DOWN       &kp UP_ARROW  &kp RIGHT  &none  &none
 &none  &none  &none             &none             &none         &none             &none           &none          &none         &none      &none  &none
                                 &kp LEFT_CONTROL  &kp LEFT_GUI  &none             &kp SPACE       &kp RIGHT_ALT  &kp TAB
