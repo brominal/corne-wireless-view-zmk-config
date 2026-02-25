@@ -190,6 +190,16 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
         };
+
+        let_num: let_num {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LET_NUM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -198,10 +208,10 @@
         qwerty {
             display-name = "qwerty";
             bindings = <
-&none  &kp Q    &kp W  &kp E             &kp R         &kp T    &kp Y      &kp U          &kp I      &kp O    &kp P       &none
-&none  &lt 2 A  &kp S  &kp D             &kp F         &kp G    &kp H      &kp J          &kp K      &kp L    &lt 3 SEMI  &none
-&none  &kp Z    &kp X  &kp C             &kp V         &kp B    &kp N      &kp M          &kp COMMA  &kp DOT  &kp FSLH    &none
-                       &kp LEFT_CONTROL  &kp LEFT_GUI  &mo 1    &kp SPACE  &kp RIGHT_ALT  &kp TAB
+&none  &let_num NUMBER_1 Q  &let_num NUMBER_2 W  &let_num NUMBER_3 E  &let_num NUMBER_4 R  &let_num N5 T    &let_num NUMBER_6 Y  &let_num N7 U  &let_num N8 I  &let_num N9 O  &let_num N0 P  &none
+&none  &lt 2 A              &kp S                &kp D                &kp F                &kp G            &kp H                &kp J          &kp K          &kp L          &lt 3 SEMI     &none
+&none  &kp Z                &kp X                &kp C                &kp V                &kp B            &kp N                &kp M          &kp COMMA      &kp DOT        &kp FSLH       &none
+                                                 &kp LEFT_CONTROL     &kp LEFT_GUI         &mo 1            &kp SPACE            &kp RIGHT_ALT  &kp TAB
             >;
         };
 
