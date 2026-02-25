@@ -142,6 +142,20 @@
 
             label = "SPLIT_UP";
         };
+
+        homerow_search: homerow_search {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(SPACE))>;
+            label = "HOMEROW_SEARCH";
+        };
+
+        homerow_scroll: homerow_scroll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(J))>;
+            label = "HOMEROW_SCROLL";
+        };
     };
 
     behaviors {
@@ -224,10 +238,10 @@
         nums {
             display-name = "nums";
             bindings = <
-&none  &none     &kp BACKSPACE     &kp TAB           &kp ESCAPE         &kp DEL          &kp GRAVE      &num_f F7 NUMBER_7   &num_f F8 NUMBER_8  &num_f F9 NUMBER_9  &none                 &none
-&none  &kp CAPS  &kp LEFT_CONTROL  &kp LEFT_ALT      &kp LEFT_SHIFT     &kp ENTER        &kp F11        &num_f F4 NUMBER_4   &num_f F5 NUMBER_5  &num_f F6 NUMBER_6  &kp SINGLE_QUOTE      &none
-&none  &none     &none             &window_switch    &kp LS(LG(SPACE))  &kp LG(LS(J))    &kp F12        &num_f F1 NUMBER_1   &num_f F2 NUMBER_2  &num_f F3 NUMBER_3  &kp NON_US_BACKSLASH  &none
-                                   &kp LEFT_CONTROL  &kp LEFT_GUI       &none            &kp BACKSPACE  &num_f F10 NUMBER_0  &kp TAB
+&none  &none            &kp BACKSPACE     &kp TAB           &kp ESCAPE      &kp DEL      &kp GRAVE        &num_f F7 NUMBER_7   &num_f F8 NUMBER_8  &num_f F9 NUMBER_9  &none                 &none
+&none  &homerow_search  &kp LEFT_CONTROL  &kp LEFT_ALT      &kp LEFT_SHIFT  &kp ENTER    &homerow_scroll  &num_f F4 NUMBER_4   &num_f F5 NUMBER_5  &num_f F6 NUMBER_6  &kp SINGLE_QUOTE      &none
+&none  &none            &none             &window_switch    &kp CAPSLOCK    &none        &kp F12          &num_f F1 NUMBER_1   &num_f F2 NUMBER_2  &num_f F3 NUMBER_3  &kp NON_US_BACKSLASH  &none
+                                          &kp LEFT_CONTROL  &kp LEFT_GUI    &none        &kp BACKSPACE    &num_f F10 NUMBER_0  &kp TAB
             >;
         };
 
