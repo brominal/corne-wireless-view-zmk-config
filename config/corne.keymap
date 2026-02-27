@@ -220,6 +220,20 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        g_paste: g_paste {
+            compatible = "zmk,behavior-tap-dance";
+            label = "G_PASTE";
+            #binding-cells = <0>;
+            bindings = <&kp G>, <&kp LG(V)>;
+        };
+
+        h_copy: h_copy {
+            compatible = "zmk,behavior-tap-dance";
+            label = "H_COPY";
+            #binding-cells = <0>;
+            bindings = <&kp H>, <&kp LG(C)>;
+        };
     };
 
     keymap {
@@ -229,7 +243,7 @@
             display-name = "qwerty";
             bindings = <
 &none  &let_num NUMBER_1 Q  &let_num NUMBER_2 W  &let_num NUMBER_3 E  &let_num NUMBER_4 R  &let_num N5 T    &let_num NUMBER_6 Y  &let_num N7 U  &let_num N8 I  &let_num N9 O  &let_num N0 P  &none
-&none  &lt 2 A              &kp S                &kp D                &kp F                &kp G            &kp H                &kp J          &kp K          &kp L          &lt 3 SEMI     &none
+&none  &lt 2 A              &kp S                &kp D                &kp F                &g_paste         &h_copy              &kp J          &kp K          &kp L          &lt 3 SEMI     &none
 &none  &kp Z                &kp X                &kp C                &kp V                &kp B            &kp N                &kp M          &kp COMMA      &kp DOT        &kp FSLH       &none
                                                  &kp LEFT_CONTROL     &kp LEFT_GUI         &mo 1            &kp SPACE            &kp RIGHT_ALT  &kp TAB
             >;
