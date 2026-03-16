@@ -269,7 +269,7 @@
         arrows {
             display-name = "arrows";
             bindings = <
-&none  &none  &none             &none             &none         &none             &full_screen  &window_switch  &full_screen  &full_screen  &none  &none
+&none  &none  &none             &split_left       &split_right  &full_screen      &full_screen  &window_switch  &full_screen  &full_screen  &none  &none
 &none  &none  &kp LEFT_CONTROL  &kp LEFT_ALT      &kp LEFT_GUI  &kp LEFT_SHIFT    &kp LEFT      &kp DOWN        &kp UP_ARROW  &kp RIGHT     &none  &none
 &none  &none  &none             &none             &none         &none             &split_left   &split_down     &split_up     &split_right  &none  &none
                                 &kp LEFT_CONTROL  &kp LEFT_GUI  &none             &kp SPACE     &kp RIGHT_ALT   &kp TAB
